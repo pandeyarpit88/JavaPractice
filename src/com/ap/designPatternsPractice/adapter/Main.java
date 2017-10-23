@@ -8,7 +8,7 @@ public class Main {
 	//This pattern involves a single class called adapter which is responsible for communication
 	//between two independent or incompatible interfaces.
 	//there are two ways to implement this
-	//1) Object Adapter way
+	//1) Observer Adapter way
 	//2) Class Adapter way
 
 }

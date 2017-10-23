@@ -33,7 +33,7 @@ public class MaxSubArray {
 
 	public static int getMaximumSumSubArrayContiguous(Integer[] arr) {
 		int contSum = arr[0];
-		int prevContSum = arr[0];
+		int prevCountSum = arr[0];
 
 		for (int i = 1; i < arr.length; i++) {
 			if (contSum < 0 && arr[i] >= 0) {
@@ -41,13 +41,13 @@ public class MaxSubArray {
 			} else {
 				contSum += arr[i];
 			}
-			if (contSum >= prevContSum) {
-				prevContSum = contSum;
+			if (contSum >= prevCountSum) {
+				prevCountSum = contSum;
 			} else if (contSum < 0) {
 				contSum = arr[i];
 			}
 		}
-		return contSum > prevContSum ? contSum : prevContSum;
+		return contSum > prevCountSum ? contSum : prevCountSum;
 	}
 
 	private static int getMaximumSumForNonContiguousElements(Integer[] arr) {
