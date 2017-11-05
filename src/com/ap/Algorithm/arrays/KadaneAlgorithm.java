@@ -3,7 +3,8 @@ package com.ap.Algorithm.arrays;
 /**
  * Created by APandey1 on 15-10-2017.
  */
-//Write an efficient program to find the sum of contiguous subarray within a one-dimensional array of numbers which has the largest sum.
+//Write an efficient program to find the sum of contiguous subarray within a one-dimensional array of numbers
+// which has the largest sum.
 public class KadaneAlgorithm {
     public static int maxArraySum(int []array) {
         int max_sum=Integer.MIN_VALUE, sum = 0;

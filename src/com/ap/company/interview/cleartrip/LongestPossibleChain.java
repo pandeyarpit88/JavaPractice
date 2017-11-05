@@ -1,7 +1,7 @@
 package com.ap.company.interview.cleartrip;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by APandey1 on 16-10-2017.
@@ -17,29 +17,35 @@ public class LongestPossibleChain {
 
     static int longestChain(String words[]) {
         int result = 0;
-        Set<String> set = new HashSet<>();
+        Map<String, Integer> map = new HashMap<>();
         for(String s : words)
-            set.add(s);
+            map.put(s, 0);
 
         for(String word : words) {
-            int curValue = findNextWord(set, word, 0);
-            result = result>curValue?result:curValue;
+            int curValue = findNextWord(map, word, 0);
+            result = result>curValue ? result : curValue;
         }
         return result;
     }
 
     static int longestChaninLength =0;
 
-    static int findNextWord(Set<String> set, String word, int counter) {
-        if(!set.contains(word))
+    static int findNextWord(Map<String, Integer> map, String word, int counter) {
+        if(!map.containsKey(word))
             return 0;
         longestChaninLength = ++counter;
         for(int i = 0; i < word.length(); i++) {
             StringBuilder sb = new StringBuilder(word);
             sb.delete(i, i + 1);
-            findNextWord(set, sb.toString(), counter);
+            if(map.containsKey(sb.toString()) && map.get(sb.toString())!=0) {
+                if(map.get(sb.toString())> longestChaninLength) {
+                    longestChaninLength = map.get(sb.toString());
+                }
+            } else {
+                int num = findNextWord(map, sb.toString(), counter);
+                map.put(sb.toString(), num);
+            }
         }
         return longestChaninLength;
     }
-
 }

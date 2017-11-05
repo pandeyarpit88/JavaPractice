@@ -1,11 +1,13 @@
 package com.ap.Algorithm.trees;
 
+import com.ap.Algorithm.trees.util.Node;
+import com.ap.Algorithm.trees.util.TreeUtility;
+
 /**
  * Created by APandey1 on 11-10-2017.
  */
 
 public class MirrorTree {
-
 
     Node mirror(Node root) {
         if(root == null)

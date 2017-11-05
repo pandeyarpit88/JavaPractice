@@ -1,9 +1,12 @@
 package com.ap.Algorithm.dynamicProgramming;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  * Created by APandey1 on 08-09-2017.
  */
 public class LongestCommonIncreasingSubsequence {
+    AtomicInteger a;
     public static Integer logestSequence(Integer arr[]) {
         int length = arr.length;
         Integer lis[] = new Integer[length];
